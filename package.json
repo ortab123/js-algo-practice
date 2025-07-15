@@ -1,14 +1,14 @@
 {
   "name": "test",
   "version": "1.0.0",
-  "description": "",
+  "description": "Hi! This repo is made for you to practice your coding interview skills. For some challenges you will need to research new methods.",
   "main": "index.js",
   "scripts": {
     "test": "jest --testPathPattern=/",
     "test-arrayOfMultiples": "jest --testPathPattern=Easy/arrayOfMultiples.test.js",
     "test-calculator": "jest --testPathPattern=Easy/calculator.test.js",
     "test-canPartition": "jest --testPathPattern=Easy/canPartition.test.js",
-    "test-convert": "jest --testPathPattern=Medium/convert.test.js",
+    "test-convert": "jest --testPathPattern=Easy/convert.test.js",
     "test-dashed": "jest --testPathPattern=Easy/dashed.test.js",
     "test-encrypt": "jest --testPathPattern=Easy/encrypt.test.js",
     "test-factorChain": "jest --testPathPattern=Easy/factorChain.test.js",
@@ -62,7 +62,18 @@
   "dependencies": {
     "@babel/preset-env": "^7.11.0",
     "babel-jest": "^26.2.2",
-    "jest": "^26.2.2",
     "js-beautify": "^1.13.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ortab123/js-algo-practice.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/ortab123/js-algo-practice/issues"
+  },
+  "homepage": "https://github.com/ortab123/js-algo-practice#readme",
+  "devDependencies": {
+    "jest": "^30.0.4"
   }
 }

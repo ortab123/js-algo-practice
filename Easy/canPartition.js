@@ -13,8 +13,19 @@ The array may contain duplicates.
 Multiple solutions can exist, any solution is sufficient to return true.
 */
 
-function canPartition( /*args*/ ) {
-  //your code
+function canPartition(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    const current = arr[i];
+
+    const sumOfOthers = arr.reduce((acc, curr, index) => {
+      return index === i ? acc : acc * curr;
+    }, 1);
+
+    if (sumOfOthers === current) {
+      return true;
+    }
+  }
+  return false;
 }
 
 exports.solution = canPartition;

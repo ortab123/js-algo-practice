@@ -16,8 +16,15 @@ Nemo's, or anything that says Nemo with something behind it, doesn't count as Fi
 If there are multiple Nemo's in the sentence, only return for the first one.
 */
 
-function findNemo( /*args*/ ) {
-  //your code
+function findNemo(string) {
+  const splitString = string.split(" ");
+  for (let i = 0; i < splitString.length; i++) {
+    if (splitString[i] === "Nemo") {
+      return console.log(`I found nemo at ${i + 1}!`);
+    }
+  }
+
+  return console.log("I didn't find Nemo:(");
 }
 
 exports.solution = findNemo;

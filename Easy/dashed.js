@@ -10,8 +10,17 @@ Notes
 A string can contain uppercase and lowercase vowels.
 */
 
-function dashed( /*args*/ ) {
-  //your code
+function dashed(string) {
+  const vowels = "aeiouAEIOU";
+  let dashedString = "";
+  for (let letter of string) {
+    dashedString += vowels.includes(letter) ? `-${letter}-` : letter;
+  }
+
+  return dashedString;
 }
+
+console.log(dashed("Carpe Diem"));
+console.log(dashed("Fight for your right to party!"));
 
 exports.solution = dashed;
