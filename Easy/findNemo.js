@@ -20,11 +20,11 @@ function findNemo(string) {
   const splitString = string.split(" ");
   for (let i = 0; i < splitString.length; i++) {
     if (splitString[i] === "Nemo") {
-      return console.log(`I found nemo at ${i + 1}!`);
+      return `I found Nemo at ${i + 1}!`;
     }
   }
 
-  return console.log("I didn't find Nemo:(");
+  return "I can't find Nemo :(";
 }
 
 exports.solution = findNemo;

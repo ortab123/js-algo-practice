@@ -14,8 +14,21 @@ Remember to return a string.
 The first phrase is always "Loves me".
 */
 
-function lovesMe( /*args*/ ) {
-  //your code
+function lovesMe(num) {
+  const stringArr = [];
+  for (let i = 0; i < num - 1; i++) {
+    if (i % 2 === 0) {
+      stringArr.push("Loves me");
+    } else {
+      stringArr.push("Loves me not");
+    }
+  }
+
+  num % 2 === 0
+    ? stringArr.push("Loves me not".toUpperCase())
+    : stringArr.push("Loves me".toUpperCase());
+
+  return stringArr.join(", ");
 }
 
 exports.solution = lovesMe;
