@@ -35,8 +35,36 @@ champions([
 ➞ "Manchester United"
 */
 
-function champions( /*args*/ ) {
-  //your code
+function champions(arrOfFootballClubs) {
+  let winningTeam = null;
+  let highestPoints = 0;
+  let bestGoalDiff = 0;
+
+  for (let team of arrOfFootballClubs) {
+    const points = calculatePoints(team);
+    const goalDiff = calculateGoalDifference(team);
+
+    if (!winningTeam || points > highestPoints) {
+      winningTeam = team;
+      highestPoints = points;
+      bestGoalDiff = goalDiff;
+    } else if (points === highestPoints) {
+      if (goalDiff > bestGoalDiff) {
+        winningTeam = team;
+        bestGoalDiff = goalDiff;
+      }
+    }
+  }
+
+  return winningTeam.name;
 }
+
+calculatePoints = (team) => {
+  return 3 * team.wins + team.draws;
+};
+
+calculateGoalDifference = (team) => {
+  return team.scored - team.conceded;
+};
 
 exports.solution = champions;
