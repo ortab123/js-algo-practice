@@ -43,8 +43,34 @@ The today parameter will always be greater than or equal to the last date in the
 An empty array should return 0.
 */
 
-function currentStreak( /*args*/ ) {
-  //your code
+function currentStreak(currentDay, dateArr) {
+  if (dateArr.length === 0) {
+    return 0;
+  }
+  if (dateArr.length < 2) {
+    return 1;
+  }
+
+  let currentStreak = 0;
+  for (let i = dateArr.length - 1; i >= 0; i--) {
+    const arrDateStr = dateArr[i].date;
+
+    if (currentDay === arrDateStr) {
+      currentStreak++;
+      currentDay = subtractOneDay(currentDay);
+      continue;
+    } else {
+      break;
+    }
+  }
+
+  return currentStreak;
+}
+
+function subtractOneDay(dateStr) {
+  let dateObj = new Date(dateStr);
+  dateObj.setDate(dateObj.getDate() - 1);
+  return dateObj.toISOString().slice(0, 10);
 }
 
 exports.solution = currentStreak;

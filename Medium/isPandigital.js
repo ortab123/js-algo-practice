@@ -10,8 +10,14 @@ isPandigital(90864523148909) ➞ false
 isPandigital(112233445566778899) ➞ false
 */
 
-function isPandigital( /*args*/ ) {
-  //your code
+function isPandigital(int) {
+  const digits = int.toString().split("").map(Number);
+  const digitsSet = new Set(digits);
+  const numsToCheck = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+  if (numsToCheck.every((num) => digitsSet.has(num))) {
+    return true;
+  } else return false;
 }
 
 exports.solution = isPandigital;

@@ -15,8 +15,10 @@ getBudgets([
 ]) ➞ 62600
 */
 
-function getBudgets( /*args*/ ) {
-  //your code
+function getBudgets(budgetsArr) {
+  const sum = budgetsArr.reduce((sum, p) => sum + p.budget, 0);
+
+  return sum;
 }
 
 exports.solution = getBudgets;
