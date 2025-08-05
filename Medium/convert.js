@@ -12,8 +12,16 @@ Round to the nearest integer.
 If the input is incorrect, return "Error".
 */
 
-function convert( /*args*/ ) {
-  //your code
+function convert(degreeStr) {
+  if (degreeStr.includes("°C")) {
+    const extractNumCel = parseInt(degreeStr);
+    const fahrenheitDeg = Math.round(extractNumCel * 1.8 + 32);
+    return fahrenheitDeg.toString() + "°F";
+  } else if (degreeStr.includes("°F")) {
+    const extractNumFahr = parseInt(degreeStr);
+    const celciusDeg = Math.round((extractNumFahr - 32) * (5 / 9));
+    return celciusDeg.toString() + "°C";
+  } else return "Error";
 }
 
 exports.solution = convert;
